@@ -8,14 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <nav id="page-nav">
-        <div class="container" id="nav-row">
-            <a th:href="@{/}" id="logo">Baza OEM</a>
-            <a href="" class="nav-item">Czynniki Środowiska Pracy</a>
-            <a href="" class="nav-item">Interpretacja wyników</a>
-            <a href="" class="nav-item">Wyświetl wyniki</a>
-        </div>
-    </nav>
+    <nav th:replace="~{fragments/navigation :: nav}"></nav>
 
     <section id="home-page-section">
         <div class="container">
