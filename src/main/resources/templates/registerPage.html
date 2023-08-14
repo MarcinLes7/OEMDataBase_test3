@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: template (~{:: #register-content})}">
-
-  <section id="register-content">
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #register-content})}">
+<section id="register-content">
     <div class="container">
-      <h1>Rejestr czynników szkodliwych</h1>
-      <table style="width: 100%">
-        <tr th:each="factor : ${factors}">
-          <td>
-            <h3 th:text="${factor.name}"></h3>
-            <p th:text="${factor.description}"></p>
-          </td>
-          <td style="text-align: right">
-            <h3 th:text="|${factor.NDS} ${factor.unit}|"></h3>
-            <a href="" class="btn btn-sm">Wprowadź</a>
-          </td>
-        </tr>
-      </table>
+        <h1>Rejestr czynników szkodliwych</h1>
+        <table style="width: 100%">
+            <tr th:each="factor : ${factors}">
+                <td>
+                    <h3 th:text="${factor.name}"></h3>
+                    <p th:text="${factor.description}"></p>
+                </td>
+                <td style="text-align: right">
+                    <h3 th:text="|${factor.NDS} ${factor.unit}|"></h3>
+                    <a href="" class="btn btn-sm">Wprowadź</a>
+                </td>
+            </tr>
+        </table>
     </div>
-  </section>
-
+</section>
 </html>

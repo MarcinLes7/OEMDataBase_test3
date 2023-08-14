@@ -18,19 +18,15 @@ public class FactorModel {
     public Long getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public double getNDS() {
         return NDS;
     }
-
     public String getUnit() {
         return unit;
     }
-
     public String getDescription() {
         return description;
     }
