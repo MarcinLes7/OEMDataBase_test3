@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #input-content})}">
+
+<section id="input-content">
+    <div class="container">
+        <h1>Wprowadzanie danych</h1>
+        <div>
+            <h3 th:text="${factor.name}"></h3>
+            <p th:text="${factor.description}"></p>
+            <p th:text="|${factor.NDS} ${factor.unit}|"></p>
+        </div>
+        <form method="post">
+            <div>
+                <input type="text" placeholder="Wydział" class="input">
+            </div>
+            <div>
+                <input type="text" placeholder="Numer pomieszczenia" class="input">
+            </div>
+            <div>
+                <input type="text" placeholder="Faza operacyjna" class="input">
+            </div>
+            <div>
+                <input type="text" placeholder="Czynność" class="input">
+            </div>
+            <div>
+                <input type="text" placeholder="Nazwisko" class="input">
+            </div>
+            <div>
+                <input type="text" placeholder="Imię" class="input">
+            </div>
+            <div>
+                <input type="text" placeholder="Środki ochrony indywidualnej" class="input">
+            </div>
+            <div>
+                <button class="btn">Zapisz</button>
+            </div>
+        </form>
+    </div>
+</section>
+</html>

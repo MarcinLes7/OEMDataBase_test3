@@ -1,5 +1,6 @@
 package pl.wszib.oemdatabase_test3.services;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.wszib.oemdatabase_test3.data.entities.FactorEntity;
 import pl.wszib.oemdatabase_test3.data.repositories.FactorRepository;
@@ -22,5 +23,10 @@ public class FactorService {
                 .map(FactorMapper::toModel)
                 .toList();
 
+    }
+
+    public FactorModel getById(Long factorId) {
+        FactorEntity factorEntity = factorRepository.findById(factorId).orElseThrow(EntityNotFoundException::new);
+        return FactorMapper.toModel(factorEntity);
     }
 }
