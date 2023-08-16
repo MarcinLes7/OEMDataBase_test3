@@ -10,27 +10,33 @@
             <p th:text="${factor.description}"></p>
             <p th:text="|${factor.NDS} ${factor.unit}|"></p>
         </div>
-        <form method="post">
+        <form method="post" th:object="${workplaceMeasurement}">
             <div>
-                <input type="text" placeholder="Wydział" class="input">
+                <input th:field="*{department}" type="text" placeholder="Wydział" class="input">
             </div>
             <div>
-                <input type="text" placeholder="Numer pomieszczenia" class="input">
+                <input th:field="*{room}" type="text" placeholder="Numer pomieszczenia" class="input">
             </div>
             <div>
-                <input type="text" placeholder="Faza operacyjna" class="input">
+                <input th:field="*{phase}" type="text" placeholder="Faza operacyjna" class="input">
             </div>
             <div>
-                <input type="text" placeholder="Czynność" class="input">
+                <input th:field="*{activity}" type="text" placeholder="Czynność" class="input">
+            </div>
+            <!--<div>
+                <input type="text" placeholder="Wynik pomiaru" class="input">
             </div>
             <div>
-                <input type="text" placeholder="Nazwisko" class="input">
+                <input type="text" placeholder="Data" class="input">
+            </div>-->
+            <div>
+                <input th:field="*{firstName}" type="text" placeholder="Nazwisko" class="input">
             </div>
             <div>
-                <input type="text" placeholder="Imię" class="input">
+                <input th:field="*{lastName}" type="text" placeholder="Imię" class="input">
             </div>
             <div>
-                <input type="text" placeholder="Środki ochrony indywidualnej" class="input">
+                <input th:field="*{ppe}" type="text" placeholder="Środki ochrony indywidualnej" class="input">
             </div>
             <div>
                 <button class="btn">Zapisz</button>

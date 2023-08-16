@@ -1,36 +1,13 @@
-package pl.wszib.oemdatabase_test3.data.entities;
+package pl.wszib.oemdatabase_test3.web.models;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "workplaces")
-public class WorkplaceEntity {
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "department")
+public class WorkplaceModel {
     private String department;
-    @Column(name = "phase")
     private String phase;
-    @Column(name = "room")
     private int room;
-    @Column(name = "activity")
     private String activity;
-    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "ppe")
     private String ppe;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDepartment() {
         return department;
@@ -68,16 +45,16 @@ public class WorkplaceEntity {
         return firstName;
     }
 
-    public void setFirstName(String first_name) {
-        this.firstName = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String last_name) {
-        this.lastName = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPpe() {
