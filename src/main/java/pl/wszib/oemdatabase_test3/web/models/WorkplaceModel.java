@@ -3,7 +3,7 @@ package pl.wszib.oemdatabase_test3.web.models;
 public class WorkplaceModel {
     private String department;
     private String phase;
-    private int room;
+    private String room;
     private String activity;
     private String firstName;
     private String lastName;
@@ -25,11 +25,11 @@ public class WorkplaceModel {
         this.phase = phase;
     }
 
-    public int getRoom() {
+    public String getRoom() {
         return room;
     }
 
-    public void setRoom(int room) {
+    public void setRoom(String room) {
         this.room = room;
     }
 

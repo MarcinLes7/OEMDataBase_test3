@@ -9,8 +9,8 @@ public class FactorEntity {
     private Long id;
     @Column(name = "name")
     private String name;
-    @Column(name = "NDS")
-    private double NDS;
+    @Column(name = "nds")
+    private double nds;
     @Column(name = "unit")
     private String unit;
     @Column(name = "description")
@@ -22,28 +22,24 @@ public class FactorEntity {
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
-
-    public double getNDS() {
-        return NDS;
+    public double getNds() {
+        return nds;
     }
-    public void setNDS(double NDS) {
-        this.NDS = NDS;
+    public void setNds(double nds) {
+        this.nds = nds;
     }
-
     public String getUnit() {
         return unit;
     }
     public void setUnit(String unit) {
         this.unit = unit;
     }
-
     public String getDescription() {
         return description;
     }

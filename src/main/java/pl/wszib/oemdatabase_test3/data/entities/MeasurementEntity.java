@@ -1,7 +1,5 @@
 package pl.wszib.oemdatabase_test3.data.entities;
-
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "measurements")
 public class MeasurementEntity {
@@ -10,63 +8,50 @@ public class MeasurementEntity {
     @Column(name = "id")
     private Long id;
     @Column(name = "factor_name")
-    private String factor_name;
+    private String factorName;
     @Column(name = "nds")
     private double nds;
-
     @Column(name = "measurement_result")
-    private double measurement_result;
+    private double measurementResult;
     @Column(name = "date")
     private String date;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "workplace_id")
-    private WorkplaceEntity workplace;
-
+    private WorkplaceEntity workplaceId;
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getFactor_name() {
-        return factor_name;
+    public String getFactorName() {
+        return factorName;
     }
-
-    public void setFactor_name(String factor_name) {
-        this.factor_name = factor_name;
+    public void setFactorName(String factor_name) {
+        this.factorName = factor_name;
     }
-
     public double getNds() {
         return nds;
     }
-
     public void setNds(double nds) {
         this.nds = nds;
     }
-
-    public double getMeasurement_result() {
-        return measurement_result;
+    public double getMeasurementResult() {
+        return measurementResult;
     }
-
-    public void setMeasurement_result(double measurement_result) {
-        this.measurement_result = measurement_result;
+    public void setMeasurementResult(double measurement_result) {
+        this.measurementResult = measurement_result;
     }
-
     public String getDate() {
         return date;
     }
-
     public void setDate(String date) {
         this.date = date;
     }
-
-    public WorkplaceEntity getWorkplace() {
-        return workplace;
+    public WorkplaceEntity getWorkplaceId() {
+        return workplaceId;
     }
-
-    public void setWorkplace(WorkplaceEntity workplace) {
-        this.workplace = workplace;
+    public void setWorkplaceId(WorkplaceEntity workplace) {
+        this.workplaceId = workplace;
     }
 }

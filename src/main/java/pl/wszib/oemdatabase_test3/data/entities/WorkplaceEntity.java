@@ -14,7 +14,7 @@ public class WorkplaceEntity {
     @Column(name = "phase")
     private String phase;
     @Column(name = "room")
-    private int room;
+    private String room;
     @Column(name = "activity")
     private String activity;
     @Column(name = "first_name")
@@ -48,11 +48,11 @@ public class WorkplaceEntity {
         this.phase = phase;
     }
 
-    public int getRoom() {
+    public String getRoom() {
         return room;
     }
 
-    public void setRoom(int room) {
+    public void setRoom(String room) {
         this.room = room;
     }
 

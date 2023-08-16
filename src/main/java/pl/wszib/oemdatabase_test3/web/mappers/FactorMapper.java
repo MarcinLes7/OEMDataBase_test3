@@ -7,7 +7,7 @@ public class FactorMapper {
     public static FactorModel toModel(FactorEntity entity) {
         return new FactorModel(entity.getId(),
                 entity.getName(),
-                entity.getNDS(),
+                entity.getNds(),
                 entity.getUnit(),
                 entity.getDescription()
         );

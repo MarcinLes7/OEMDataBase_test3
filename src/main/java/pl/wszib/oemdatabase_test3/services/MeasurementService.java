@@ -29,11 +29,11 @@ public class MeasurementService {
         WorkplaceEntity workplaceEntity = WorkplaceMapper.toEntity(workplaceModel);
 
         MeasurementEntity measurementEntity = new MeasurementEntity();
-        measurementEntity.setFactor_name(factorEntity.getName());
-        measurementEntity.setNds(factorEntity.getNDS());
-        measurementEntity.setMeasurement_result(measurementEntity.getMeasurement_result());
+        measurementEntity.setFactorName(factorEntity.getName());
+        measurementEntity.setNds(factorEntity.getNds());
+        measurementEntity.setMeasurementResult(measurementEntity.getMeasurementResult());
         measurementEntity.setDate(measurementEntity.getDate());
-        measurementEntity.setWorkplace(workplaceEntity);
+        measurementEntity.setWorkplaceId(workplaceEntity);
 
         measurementRepository.save(measurementEntity);
 

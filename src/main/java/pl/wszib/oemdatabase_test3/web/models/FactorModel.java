@@ -3,14 +3,14 @@ package pl.wszib.oemdatabase_test3.web.models;
 public class FactorModel {
     private Long id;
     private String name;
-    private double NDS;
+    private double nds;
     private String unit;
     private String description;
 
-    public FactorModel(Long id, String name, double NDS, String unit, String description) {
+    public FactorModel(Long id, String name, double nds, String unit, String description) {
         this.id = id;
         this.name = name;
-        this.NDS = NDS;
+        this.nds = nds;
         this.unit = unit;
         this.description = description;
     }
@@ -21,8 +21,8 @@ public class FactorModel {
     public String getName() {
         return name;
     }
-    public double getNDS() {
-        return NDS;
+    public double getNds() {
+        return nds;
     }
     public String getUnit() {
         return unit;
