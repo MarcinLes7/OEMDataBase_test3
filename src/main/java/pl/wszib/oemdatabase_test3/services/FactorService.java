@@ -19,6 +19,7 @@ public class FactorService {
 
     public List<FactorModel> findAll() {
         List<FactorEntity> entities = factorRepository.findAll();
+
         return entities.stream()
                 .map(FactorMapper::toModel)
                 .toList();
@@ -30,3 +31,13 @@ public class FactorService {
         return FactorMapper.toModel(factorEntity);
     }
 }
+
+
+
+
+
+
+
+
+
+
