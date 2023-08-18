@@ -22,7 +22,7 @@ public class MeasurementService {
     }
 
     @Transactional
-    public void saveMeasurement(Long factorId, WorkplaceModel workplaceModel) {
+    public Long saveMeasurement(Long factorId, WorkplaceModel workplaceModel) {
         FactorEntity factorEntity = factorRepository.findById(factorId)
                 .orElseThrow(EntityNotFoundException::new);
 
@@ -35,8 +35,24 @@ public class MeasurementService {
         measurementEntity.setDate(measurementEntity.getDate());
         measurementEntity.setWorkplaceId(workplaceEntity);
 
-        measurementRepository.save(measurementEntity);
+        final var savedMeasurement = measurementRepository.save(measurementEntity);
+        return savedMeasurement.getId();
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

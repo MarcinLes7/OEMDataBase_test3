@@ -12,4 +12,21 @@ public class FactorMapper {
                 entity.getDescription()
         );
     }
+
+    public static FactorEntity toEntity(FactorModel model) {
+        final var entity = new FactorEntity();
+        entity.setName(model.getName());
+        entity.setNds(model.getNds());
+        entity.setUnit(model.getUnit());
+        entity.setDescription(model.getDescription());
+
+        return entity;
+    }
+
+
+
+
+
+
+
 }

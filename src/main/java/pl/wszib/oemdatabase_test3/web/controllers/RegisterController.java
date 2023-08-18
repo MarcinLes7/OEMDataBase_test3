@@ -18,9 +18,23 @@ public class RegisterController {
 
     @GetMapping("register")
     public String registerPage(Model model) {
-        List<FactorModel> factors = factorService.findAll();
+        final var factors = factorService.findAll();
         model.addAttribute("factors", factors);
         return "registerPage";
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

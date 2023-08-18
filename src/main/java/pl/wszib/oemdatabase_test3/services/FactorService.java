@@ -1,6 +1,7 @@
 package pl.wszib.oemdatabase_test3.services;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import pl.wszib.oemdatabase_test3.data.entities.FactorEntity;
 import pl.wszib.oemdatabase_test3.data.repositories.FactorRepository;
@@ -18,7 +19,7 @@ public class FactorService {
     }
 
     public List<FactorModel> findAll() {
-        List<FactorEntity> entities = factorRepository.findAll();
+        final var entities = factorRepository.findAll();
 
         return entities.stream()
                 .map(FactorMapper::toModel)
@@ -27,10 +28,45 @@ public class FactorService {
     }
 
     public FactorModel getById(Long factorId) {
-        FactorEntity factorEntity = factorRepository.findById(factorId).orElseThrow(EntityNotFoundException::new);
-        return FactorMapper.toModel(factorEntity);
+        final var entity = factorRepository.findById(factorId)
+                .orElseThrow(EntityNotFoundException :: new);
+
+        return FactorMapper.toModel(entity);
+
     }
+
+    @Transactional
+    public void deleteById(Long factorId) {
+        factorRepository.deleteById(factorId);
+    }
+
+    @Transactional
+    public void createFactor(FactorModel factorModel) {
+        final var entity = FactorMapper.toEntity(factorModel);
+
+        factorRepository.save(entity);
+    }
+
+
+    @Transactional
+    public void editFactor(Long factorId, FactorModel factorModel) {
+        final var entity = factorRepository.findById(factorId)
+                .orElseThrow(EntityNotFoundException :: new);
+
+        entity.setName(factorModel.getName());
+        entity.setDescription(factorModel.getDescription());
+        entity.setNds(factorModel.getNds());
+        entity.setUnit(factorModel.getUnit());
+    }
+
+
 }
+
+
+
+
+
+
 
 
 
