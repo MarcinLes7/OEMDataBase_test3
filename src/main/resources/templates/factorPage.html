@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="https://www.thymeleaf.org"
       th:replace="~{fragments/layout :: template (~{:: #factor-content})}">
-
 <section id="factor-content">
     <div class="container">
         <h1>Czynnik</h1>
@@ -11,15 +9,18 @@
                 <input placeholder="Nazwa czynnika" th:field="*{name}" type="text" class="input"/>
             </div>
             <div class="form-row">
-                <input placeholder="NDS" th:field="*{nds}" type="number" step="0.01" class="input"/>
+                <textarea placeholder="Opis czynnika" th:field="*{description}" class="textbox"></textarea>
             </div>
             <div class="form-row">
-                <textarea placeholder="Opis czynnika" th:field="*{description}" type="text" class="textbox"></textarea>
+                <input placeholder="NDS" th:field="*{nds}" type="number" step="0.01" class="input"/>
             </div>
             <div class="form-row">
                 <input placeholder="jednostka" th:field="*{unit}" type="text" class="input"/>
             </div>
+            <div class="form-row">
+                <button class="btn">Aktualizuj</button>
+            </div>
         </form>
     </div>
-</section>>
+</section>
 </html>

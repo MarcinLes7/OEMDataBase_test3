@@ -27,11 +27,9 @@ public class InputController {
     @GetMapping("input/{factor-id}")
     public String inputForm(@PathVariable("factor-id") Long factorId, Model model) {
         final var factor = factorService.getById(factorId);
-
         model.addAttribute("workplaceMeasurement", new WorkplaceModel());
         model.addAttribute("factor", factor);
         return "inputPage";
-
     }
 
     @PostMapping("input/{factor-id}")
@@ -44,25 +42,8 @@ public class InputController {
             model.addAttribute("factor", factor);
             return "factorPage";
         }
-
         final var measurementId = measurementService.saveMeasurement(factorId, workplaceModel);
         model.addAttribute("measurementId", measurementId);
-
         return "measurementConfirmationPage";
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

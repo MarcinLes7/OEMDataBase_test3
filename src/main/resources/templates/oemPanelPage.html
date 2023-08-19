@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #oem-content})}">
+<section id="oem-content">
+    <div class="container">
+        <h1 style="text-align: center">Wprowadzanie i edycja czynników szkodliwych w bazie</h1>
+        <table style="width: 100%">
+            <tr th:each="factor : ${factors}">
+                <td>
+                    <h3 th:text="${factor.name}"></h3>
+                    <p th:text="${factor.description}"></p>
+                </td>
+                <td style="text-align: center">
+                    <h3 th:text="|${factor.nds} ${factor.unit}|"></h3>
+                    <div class="oem-actions">
+                        <a th:href="@{/oem-panel/factor/edit/{factor-id}(factor-id=${factor.id})}" class="btn btn-sm">Edytuj</a>
+                        <form method="post" th:action="@{/oem-panel/factor/delete/{factor-id}(factor-id=${factor.id})}">
+                            <button class="btn btn-sm" style="background-color: var(--warning)">Usuń</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="factor-list-actions">
+            <a th:href="@{/oem-panel/factor/create}" class="btn">Dodaj</a>
+        </div>
+    </div>
+</section>
+</html>

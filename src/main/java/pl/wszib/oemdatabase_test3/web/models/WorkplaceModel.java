@@ -1,12 +1,21 @@
 package pl.wszib.oemdatabase_test3.web.models;
 
+import jakarta.validation.constraints.Size;
+
 public class WorkplaceModel {
+    @Size(min=2, max=50)
     private String department;
+    @Size(min=2, max=50)
     private String phase;
+    @Size(min=2, max=50)
     private String room;
+    @Size(min=2, max=500)
     private String activity;
+    @Size(min=2, max=50)
     private String firstName;
+    @Size(min=2, max=50)
     private String lastName;
+    @Size(min=2, max=500)
     private String ppe;
 
     public String getDepartment() {

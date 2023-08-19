@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Oem database</title>
-</head>
-<body>
-  <div>
-    <h1>coś poszło nie tak</h1>
-  </div>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #error-content})}">
+<section id="error-content">
+    <div class="container">
+        <h1>Błąd na stronie - coś poszło nie tak</h1>
+    </div>
+</section>
 
-</body>
+
 </html>

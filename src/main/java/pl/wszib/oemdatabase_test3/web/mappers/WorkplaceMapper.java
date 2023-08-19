@@ -13,7 +13,6 @@ public class WorkplaceMapper {
         entity.setPpe(model.getPpe());
         entity.setFirstName(model.getFirstName());
         entity.setLastName(model.getLastName());
-
         return entity;
     }
 }

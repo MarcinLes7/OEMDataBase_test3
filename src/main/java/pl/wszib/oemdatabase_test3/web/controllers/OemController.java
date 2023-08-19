@@ -19,7 +19,6 @@ public class OemController {
     @GetMapping
     public String oemPanelPage(Model model) {
         final var factors = factorService.findAll();
-
         model.addAttribute("factors", factors);
         return "oemPanelPage";
     }
@@ -27,52 +26,34 @@ public class OemController {
     @PostMapping("factor/delete{factor-id}")
     public String deleteFactor(@PathVariable("factor-id") Long factorId) {
         factorService.deleteById(factorId);
-
         return "redirect:/oem-panel";
     }
 
     @GetMapping("factor/create")
     public String createFactorForm(Model model) {
-
         model.addAttribute("factor", new FactorModel());
-
         return "factorPage";
     }
 
     @PostMapping("factor/create")
     public String createFactor(@ModelAttribute("factor") FactorModel factorModel) {
         factorService.createFactor(factorModel);
-
         return "redirect:/oem-panel";
     }
 
     @GetMapping("factor/edit/{factor-id}")
     public String editFactorForm(@PathVariable("factor-id") Long factorId, Model model) {
         final var factor = factorService.getById(factorId);
-
         model.addAttribute("factor", factor);
-
         return "factorPage";
     }
 
     @PostMapping("factor/edit/{factor-id}")
     public String editFactor(@PathVariable("factor-id") Long factorId,
-        @ModelAttribute("factor") FactorModel factorModel) {
+                             @ModelAttribute("factor") FactorModel factorModel) {
         factorService.editFactor(factorId, factorModel);
-
         return "redirect:/oem-panel";
-
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 

@@ -37,9 +37,7 @@ public class MeasurementService {
 
         final var savedMeasurement = measurementRepository.save(measurementEntity);
         return savedMeasurement.getId();
-
     }
-
 }
 
 

@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Navigation</title>
 </head>
 <body>
-    <nav id="page-nav" th:fragment="nav">
-        <div class="container" id="nav-row">
-            <a th:href="@{/}" id="logo">Baza OEM</a>
-            <a th:href="@{/factorDescription}" class="nav-item">Opis czynników szkodliwych</a>
-            <a th:href="@{/register}" class="nav-item">Baza czynników</a>
-            <a href="" class="nav-item">Wyświetl wyniki pomiarów</a>
-        </div>
-    </nav>
+<nav id="page-nav" th:fragment="nav">
+    <div class="container" id="nav-row">
+        <a th:href="@{/}" id="logo">Baza OEM</a>
+        <a th:href="@{/factorDescription}" class="nav-item">Opis czynników szkodliwych</a>
+        <a th:href="@{/oem-panel}" class="nav-item">Baza czynników</a>
+        <a href="" class="nav-item">Wyświetl wyniki pomiarów</a>
+    </div>
+</nav>
 </body>
 </html>

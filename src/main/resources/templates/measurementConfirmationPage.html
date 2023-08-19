@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org"
       th:replace="~{fragments/layout :: template (~{:: #measurement-confirmed-content})}">
-
-  <section id="measurement-confirmed-content">
+<section id="measurement-confirmed-content">
     <div class="container">
-      <h1 style="font-size: 3em">Pomiar o identyfikatorze <span th:text="${factorId}"></span> na stanowisku pracy został zapisany w bazie</h1>
+        <h1 style="font-size: 3em">Wynik pomiaru o identyfikatorze <span th:text="${measurementId}"></span> został
+            zapisany w bazie</h1>
     </div>
-  </section>
+</section>
 </html>

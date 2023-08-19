@@ -1,8 +1,11 @@
 package pl.wszib.oemdatabase_test3.web.models;
 
+import jakarta.validation.constraints.Pattern;
+
 public class FactorModel {
     private Long id;
     private String name;
+    @Pattern(regexp = "[0-9]{3}")
     private double nds;
     private String unit;
     private String description;

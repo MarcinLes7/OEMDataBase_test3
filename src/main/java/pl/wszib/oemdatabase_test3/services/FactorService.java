@@ -24,15 +24,11 @@ public class FactorService {
         return entities.stream()
                 .map(FactorMapper::toModel)
                 .toList();
-
     }
 
     public FactorModel getById(Long factorId) {
-        final var entity = factorRepository.findById(factorId)
-                .orElseThrow(EntityNotFoundException :: new);
-
+        final var entity = factorRepository.findById(factorId).orElseThrow(EntityNotFoundException::new);
         return FactorMapper.toModel(entity);
-
     }
 
     @Transactional
@@ -43,23 +39,18 @@ public class FactorService {
     @Transactional
     public void createFactor(FactorModel factorModel) {
         final var entity = FactorMapper.toEntity(factorModel);
-
         factorRepository.save(entity);
     }
 
-
     @Transactional
     public void editFactor(Long factorId, FactorModel factorModel) {
-        final var entity = factorRepository.findById(factorId)
-                .orElseThrow(EntityNotFoundException :: new);
+        final var entity = factorRepository.findById(factorId).orElseThrow(EntityNotFoundException::new);
 
         entity.setName(factorModel.getName());
         entity.setDescription(factorModel.getDescription());
         entity.setNds(factorModel.getNds());
         entity.setUnit(factorModel.getUnit());
     }
-
-
 }
 
 

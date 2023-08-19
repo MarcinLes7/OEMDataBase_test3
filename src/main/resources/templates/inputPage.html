@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org"
       th:replace="~{fragments/layout :: template (~{:: #input-content})}">
-
 <section id="input-content">
     <div class="container">
-        <h1 style="text-align: center">Wprowadzanie wyników pomiarów, danych stanowiska pracy i wykonywanych czynności</h1>
+        <h1 style="text-align: center">Wprowadzanie wyników pomiarów, danych stanowiska pracy i wykonywanych
+            czynności</h1>
         <div>
             <h3 th:text="${factor.name}"></h3>
             <p th:text="${factor.description}"></p>
             <p th:text="|${factor.nds} ${factor.unit}|"></p>
         </div>
         <form method="post" th:object="${workplaceMeasurement}" th:action="@{/input/{factorId}(factorId=${factor.id})}">
-            <div >
+            <div>
                 <input th:field="*{department}" type="text" placeholder="Wydział" class="input">
                 <span class="error-msg" th:if="${#fields.hasErrors('department')}">Nazwa wydziału powinna składać się z conajmniej 3 znaków</span>
             </div>
@@ -25,21 +25,15 @@
             </div>
             <div>
                 <input th:field="*{activity}" type="text" placeholder="Czynność" class="input">
-                <span class="error-msg" th:if="${#fields.hasErrors('activity')}">Nazwa czynnosci pomieszczenia powinna składać się z conajmniej 3 znaków </span>
-            </div>
-            <!--<div>
-                <input type="text" placeholder="Wynik pomiaru" class="input">
+                <span class="error-msg" th:if="${#fields.hasErrors('activity')}">Nazwa czynności pomieszczenia powinna składać się z conajmniej 3 znaków </span>
             </div>
             <div>
-                <input type="text" placeholder="Data" class="input">
-            </div>-->
-            <div>
-                <input th:field="*{firstName}" type="text" placeholder="Nazwisko" class="input">
-                <span class="error-msg" th:if="${#fields.hasErrors('firstName')}">nazwisko powinno składać się z conajmniej 3 znaków </span>
+                <input th:field="*{firstName}" type="text" placeholder="Imię" class="input">
+                <span class="error-msg" th:if="${#fields.hasErrors('firstName')}">Imię powinno składać się z conajmniej 3 znaków </span>
             </div>
             <div>
-                <input th:field="*{lastName}" type="text" placeholder="Imię" class="input">
-                <span class="error-msg" th:if="${#fields.hasErrors('lastName')}">Imię powinno składać się z conajmniej 3 znaków </span>
+                <input th:field="*{lastName}" type="text" placeholder="Nazwisko" class="input">
+                <span class="error-msg" th:if="${#fields.hasErrors('lastName')}">Nazwisko powinno składać się z conajmniej 3 znaków </span>
             </div>
             <div>
                 <input th:field="*{ppe}" type="text" placeholder="Środki ochrony indywidualnej" class="input">
@@ -52,3 +46,12 @@
     </div>
 </section>
 </html>
+
+
+<!--trzeba dodac jeszcze poniższe pola-->
+<!--<div>
+             <input type="text" placeholder="Wynik pomiaru" class="input">
+         </div>
+         <div>
+             <input type="text" placeholder="Data" class="input">
+         </div>-->
